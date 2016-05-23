@@ -1,0 +1,27 @@
+﻿@model ImageResizer.Models.ImageDisplayViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-8">
+      
+        @using (Html.BeginForm("SaveImage", "Home", FormMethod.Post, new { enctype="multipart/form-data" })) {
+            @Html.Label("originalImage")
+            <input type="file" name="originalImage"/>
+            <input type="submit" value="Submit Image"/>
+        }
+    </div>
+</div>
+@if (Model != null) { 
+<div class="row">
+    <div class="col-md-8">
+        Original:
+        <img src="@Model.OriginalUrl" style="max-height:400px"/>
+    </div>
+    <div class="col-md-4">
+        Thumb:
+        <img src="@Model.ThumbUrl" />
+    </div>
+</div>
+}

@@ -1,0 +1,1 @@
+A simple instructional project to demonstrate resizing an uploaded image. Saving to a file not required and the bare streams could easily be used to store the results elsewhere such as S3. Also note that the utilities are in the controller, but would normally be moved to a utility class.
